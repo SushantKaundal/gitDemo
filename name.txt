@@ -1,0 +1,272 @@
+import React from "react";
+import "../css/Allcontact.css";
+import "../css/Vox.css";
+
+function Allcontact({ contentMinimized }) {
+  return (
+    <>
+      <div
+        className={`main-content ${
+          contentMinimized ? "main-content_minimized" : ""
+        }`}
+      >
+        {" "}
+        <div className="page_header">
+          <div className="page_title">
+            <h1>Contacts</h1>
+          </div>
+          <div className="page_control">
+            <button
+              className="btn btn-primary"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+            >
+              <i className="icon-plus me-3" aria-hidden="true" />
+              <span>New Contact</span>
+            </button>
+            <div
+              className="offcanvas offcanvas-end"
+              tabIndex={-1}
+              id="offcanvasExample"
+              aria-labelledby="offcanvasExampleLabel"
+            >
+              <div className="offcanvas-header popup_header">
+                <h5 className="offcanvas-title" id="offcanvasExampleLabel">
+                  <b>Create contact</b>
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                />
+              </div>
+              <div className="offcanvas-body">
+                <div className="form-group">
+                  <label>First name</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. John"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Last name</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. Smith"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Street</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. Ninth Street"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>City</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. Kathmandu"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>State/Province</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. Province 3"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Country</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. Nepal"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <div className="row number_section align-items-center">
+                  <div className="col-md-7">
+                    <div className="form-group">
+                      <label htmlFor="telContactf">Contact number</label>
+                      <input
+                        type="tel"
+                        className="form-control"
+                        placeholder="Ex. 012345678"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-5">
+                    <div className="form-check">
+                      <input
+                        className="form-check-input checkContactPrimary"
+                        type="checkbox"
+                        defaultChecked=""
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="checkContactPrimary"
+                      >
+                        Set as primary
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label>Company</label>
+                  <input
+                    type="text"
+                    placeholder="Ex. Voxtech Co"
+                    className="form-control modal_input"
+                  />
+                </div>
+                <button
+                  type="button"
+                  className="btn btn-transparent"
+                  id="add_alt_number"
+                >
+                  <i className="icon-plus" /> Add phone number
+                </button>
+                <div className="offcanvas-footer">
+                  <button className="btn btn-primary" type="button">
+                    Create contact
+                  </button>
+                  <button
+                    className="btn btn-outline-primary"
+                    type="button"
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button
+                className="btn btn-outline-primary"
+                type="button"
+                id="contactsExportButton"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Export <i className="icon-angle-down ms-2" />
+              </button>
+              <div
+                className="dropdown-menu dropdown-menu-right"
+                aria-labelledby="contactsExportButton"
+              >
+                <a className="dropdown-item" href="#">
+                  CSV
+                </a>
+                <a className="dropdown-item" href="#">
+                  Excel
+                </a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button
+                className="btn btn-outline-primary "
+                type="button"
+                id="contactSettings"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i className="icon-ellipsis-v " />
+              </button>
+              <div
+                className="dropdown-menu dropdown-menu-right"
+                aria-labelledby="contactsExportButton"
+              >
+                <a className="dropdown-item" href="#">
+                  Download Template
+                </a>
+                <a className="dropdown-item" href="#">
+                  Import Contacts
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="search-box">
+          <div className="filter_search">
+            <input type="text" id="myInput" placeholder="Search contacts" />
+            <i className="icon-search" id="search_contact" />
+          </div>
+        </div>
+        <div className="contact-table">
+          <table className="table table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Number</th>
+                <th scope="col">Company</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" />
+                <td>-</td>
+                <td>0123456789</td>
+                <td>-</td>
+                <td>
+                  <div className="d-flex g-4">
+                    <button className="btn btn-primary me-2" type="button">
+                      <i className="icon-phone" />
+                    </button>
+                    <button className="btn btn-outline-primary " type="button">
+                      <i className="icon-ellipsis-v " />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" />
+                <td>-</td>
+                <td>0123456789</td>
+                <td>-</td>
+                <td>
+                  <div className="d-flex g-4">
+                    <button className="btn btn-primary me-2" type="button">
+                      <i className="icon-phone" />
+                    </button>
+                    <button className="btn btn-outline-primary " type="button">
+                      <i className="icon-ellipsis-v " />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" />
+                <td>-</td>
+                <td>0123456789</td>
+                <td>-</td>
+                <td>
+                  <div className="d-flex g-4">
+                    <button className="btn btn-primary me-2" type="button">
+                      <i className="icon-phone" />
+                    </button>
+                    <button className="btn btn-outline-primary " type="button">
+                      <i className="icon-ellipsis-v " />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
+}
+export default Allcontact;
